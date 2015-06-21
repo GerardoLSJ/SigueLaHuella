@@ -1,0 +1,79 @@
+<% var stylesheet = "admin" %>
+
+<% include ../_header %>
+
+<form class="container" method="post" action="http://coregerry.parseapp.com/posts">
+  <div class="form_section">
+    <label>Nombre</label>
+    <input class="form-control" name="title">
+  </div>
+  <div class="form_section">
+    <label>Edad</label>
+    <textarea class="form-control" name="edad" ></textarea>
+  </div>
+
+  <div class="form_section">
+    <label>Hembra o Macho</label>
+    <textarea class="form-control" name="Hemb"></textarea>
+  </div>
+
+  <div class="form_section">
+    <label>Animo</label>
+    <textarea class="form-control" name="animo"></textarea>
+  </div>
+
+   <div class="form_section">
+    <label>Colonia</label>
+    <textarea class="form-control" name="colonia"></textarea>
+  </div>
+
+   <div class="form_section">
+    <label>Contacto</label>
+    <textarea class="form-control" name="contacto"></textarea>
+  </div>
+
+  <div class="form_section">
+    <label>Mas informacion</label>
+    <textarea class="form-control" name="masinfo" placeholder="Esterilizado" ></textarea>
+  </div>
+  <div class="form_section">
+    <label>URL de la foto</label>
+    <textarea class="form-control" name="imagen"></textarea>
+  </div>
+  <div class="form_section">
+    <label>Adoptado o extraviado RED O BLUE </label>
+ 
+<div>
+  <button class="btn btn-info btn-block">En_Adopcion</button>
+  <button class="btn btn-danger btn-block">Extraviado</button>
+  
+  
+</div>
+<input class="form-control" name="estado" type="text" value="Selecciona una opcion para publicar tu anuncio">
+ 
+<script>
+$( "button" ).click(function() {
+  var text = $( this ).text();
+  $( "input" ).val( text );
+});
+</script>
+ 
+
+
+
+    
+   
+  
+  </div>
+
+
+  <div class="form_section">
+    <input style="visibility:hidden;" class="btn btn-info btn-block" type="submit" value="Publish">
+  </div>
+
+
+</form>
+
+
+<% include ../_footer %>
+

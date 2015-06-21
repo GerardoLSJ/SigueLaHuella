@@ -1,0 +1,24 @@
+
+
+<div id="contactdiv">
+
+<form class='new_comment' method='post' action="<%= '/posts/' + post.id + '/comments' %>">
+  <div class="form_title">Adopción</div>
+  <div class='form_section'>
+    <label>Tú nombre</label>
+    <input name='author' class='comment_author' placeholder="Tú Nombre" />
+  </div>
+  <div class='form_section'>
+    <label>Tú E-mail</label>
+    <input name='author_email' class='comment_author' placeholder = "Tú E-mail" />
+  </div>
+  <div class='form_section'>
+    <label>Mot. Adop</label>
+    <textarea name='body' class='comment_body'></textarea>
+  </div>
+  <div class="write_comment">
+    <input type='submit' class="button_write_comment" value="Mot. Adop" />
+  </div>
+</form>
+
+</div>

@@ -1,0 +1,69 @@
+<div class='post'>
+    <div class='picture'>
+        <% var hash = hex_md5(userEmail); %>
+        <img src=<%= 'https://secure.gravatar.com/avatar/' + hash + '?size=130&default=https%3A%2F%2Fwww.parse.com%2Fimages%2Faccounts%2Fno_avatar.png' %> />
+    </div>
+
+
+    <h1><a href="<%= '/posts/' + post.id %>"><%= post.get('title') %></a>   
+        <img src="http://s1.anyimg.com/img/xw0ore6/share.jpg"/>
+        <a href="#"><button class="btn btn-success btn-block" id="onclick"><b>Adoptar</b></button> </a> 
+   
+
+     </h1>
+    <h5><%= formatTime(post.createdAt) %></h5>
+
+     <div class="row">
+
+            <div class="col-md-6">
+
+    <div class='content'>
+        <p><b style="margin-left:15px;">Edad: </b> <%- post.get('edad').replace(/\n/g, '<br />') %></p>
+        <p><b style="margin-left:15px;">Sexo: </b> <%- post.get('Hemb').replace(/\n/g, '<br />') %></p>
+        <p><b style="margin-left:15px;">Animo: </b> <%- post.get('animo').replace(/\n/g, '<br />') %></p>
+        <p><b style="margin-left:15px;">Colonia: </b> <%- post.get('colonia').replace(/\n/g, '<br />') %></p>
+        <p><b style="margin-left:15px;">Contacto: </b> <%- post.get('contacto').replace(/\n/g, '<br />') %></p>
+        <p><b style="margin-left:15px;">Mas informacion: </b> <%- post.get('masinfo').replace(/\n/g, '<br />') %></p>
+        
+    </div>
+
+
+    </div>
+          
+
+           <div class="col-md-6">
+           <div class ="container3">
+              <p><b style="margin-left:15px; width:500px; ">Fotos: </b>  <img class="featurette-image img-responsive center-block"<img src="<%- snippet(post.get("imagen"), 150) %>"></b> </p>
+            </div>  
+            </div>
+    </div>
+<!--
+<div class="container" id="mainform">
+    <div id="contactdiv">
+            <form class="form" action="#" id="contact">
+                <img src="http://www.formget.com/tutorial/jquery-popup-form-demo/images/button_cancel.png" class="img" id="cancel">  
+                <h3>Contact Form</h3>
+                <hr><br>
+                <label>Name: <span>*</span></label>
+                <br>
+                <input type="text" id="name" placeholder="Name"><br>
+                <br>
+                <label>Email: <span>*</span></label>
+                <br>
+                <input type="text" id="email" placeholder="Email"><br>
+                <br>
+                <label>Contact No: <span>*</span></label>
+                <br>
+                <input type="text" id="contactno" placeholder="10 digit Mobile no."><br>
+                <br>
+                <label>Message:</label>
+                <br>        
+                <textarea id="message" placeholder="Message......."></textarea><br>
+                <br>
+                <input type="button" id="send" value="Send">
+                <input type="button" id="cancel" value="Cancel">
+                <br>
+            </form>
+        </div>
+</div>        
+       -->

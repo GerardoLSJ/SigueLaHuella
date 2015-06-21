@@ -1,0 +1,73 @@
+<!-- Include the header partial -->
+<% include ../_header %>
+
+<!-- content -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SíguelelaHuella.com</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Top</a></li>
+            <li><a href="#about">Adopta</a></li>
+            <li><a href="#contact">Extravié</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Log In</a></li>
+            <li><a href="../navbar-static-top/">Regístrate</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
+
+
+<div class="sidebar">
+   <!--
+    <div class="picture">
+        <% var hash = hex_md5(userEmail); %>
+      	<img src=<%= 'https://secure.gravatar.com/avatar/' + hash + '?size=220&default=https%3A%2F%2Fwww.parse.com%2Fimages%2Faccounts%2Fno_avatar.png' %> />  </div>
+  	<div class="username"><%= userDisplayName %></div>
+
+    -->
+  	<div class="blog_description"><%= userDescription %></div>
+</div>
+  	
+<div class="main_content">
+  <div class="row">
+  	<% posts.forEach(function(post) { %>
+  		<div class="post_link">
+          
+
+            <div class="col-md-4 <%- post.get('estado').replace(/\n/g, '<br />') %>">
+
+	  		<h1><a href="<%= '/posts/' + post.id %>"><%= post.get("title") %></a> <img src="http://s1.anyimg.com/thumb/1yq3dwg/share.jpg"/></h1>
+	  		<h5><%= formatTime(post.createdAt) %></h5>
+
+        <p><b>Edad:</b> <%- snippet(post.get("edad"), 2) %></p>
+        <p><b>Hembra o Macho:</b><%- snippet(post.get("Hemb"), 20) %></p>
+       
+        <p><b>Contacto:</b><%- snippet(post.get("contacto"), 20) %></p>
+	  		<p><b>Mas información:</b><%- snippet(post.get("masinfo"), 15) %>
+         <div class="container1">
+                <a href="<%= '/posts/' + post.id %>">  <img class="featurette-image img-responsive center-block"<img src="<%- snippet(post.get("imagen"), 150) %>"></b></a>
+              </div>
+       </p>
+
+            </div>
+          
+  		</div>
+    <% }) %>
+  </div>  
+</div>
+
+<!-- Include the footer partial -->
+<% include ../_footer %>
